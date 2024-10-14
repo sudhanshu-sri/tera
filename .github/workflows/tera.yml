@@ -13,10 +13,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: update repo for AWS CLI
+      run: sudo apt-get update
+      
     - name: Install AWS CLI
-      run:
-        sudo apt-get update
-        sudo apt-get install -y awscli
+      run: sudo apt-get install -y awscli
 
     # - name: Configure AWS CLI
     #   run: aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID && aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY && aws configure set default.region $AWS_REGION
